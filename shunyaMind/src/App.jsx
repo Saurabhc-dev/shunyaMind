@@ -1,16 +1,13 @@
 import { useState } from 'react'
 
 import './App.css'
+import Home from './pages/Home'
 
 function App() {
 
   return (
  <>
-  <div className="flex items-center justify-center h-screen bg-black">
-      <h1 className="text-5xl font-bold text-green-400">
-        Tailwind Working ✅
-      </h1>
-    </div>
+  <Home />
  </>
   )
 }

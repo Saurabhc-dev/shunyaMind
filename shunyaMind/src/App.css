@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.hero-gradient {
+  background: linear-gradient(#e5f4ff 5%, #ffffff00 40%);
+}
+.contact_bg_gradient {
+    background-image: url(/contactbg.png);
+    background-position: 50%;
+    background-size: cover;
+}
+.footer-gradient{
+  background:linear-gradient(180deg, #FFF 0%, #E5F4FF 100%)
+}
