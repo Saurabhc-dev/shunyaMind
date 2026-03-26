@@ -36,8 +36,8 @@ function System() {
         <div className="text-center mb-12">
           <h4 className="text-2xl md:text-4xl font-bold">
             How We Turn{" "}
-            <span className="text-orange-500">Friction</span> into{" "}
-            <span className="text-blue-500">Flow</span>
+            <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">Friction</span> into{" "}
+            <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">Flow</span>
           </h4>
           <p className="text-gray-600 mt-2 text-xs md:text-lg">
             We reduce learning friction and create conditions where students naturally enter a state of clarity, stability, and optimal learning
@@ -46,9 +46,13 @@ function System() {
 
         {/* 🔥 DESKTOP */}
         <div className="hidden md:grid grid-cols-2 gap-10 items-center">
+          <div className="hidden md:block absolute left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="hidden md:block absolute right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10" />
           
           {/* LEFT ACCORDION */}
           <div className="space-y-4">
+            
+
             {data.map((item, i) => (
               <div
                 key={i}

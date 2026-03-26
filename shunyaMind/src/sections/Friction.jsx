@@ -5,6 +5,8 @@ import brain3 from "../assets/brain3.png";
 import brain4 from "../assets/brain4.png";
 import smImg1 from "../assets/smImg1.png"
 import Card from "../components/Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const data = [
   {
@@ -37,7 +39,7 @@ const data = [
 
 function Friction() {
   const [activeImg, setActiveImg] = useState(brain1);
-  const [index, setIndex] = useState(0); // ✅ FIX: missing state
+  const [index, setIndex] = useState(0);
 
   return (
     <section className="py-10 md:py-32 bg-white">
@@ -47,7 +49,7 @@ function Friction() {
         <div className="text-center mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold">
             What <span className="text-orange-500">Stops</span>{" "}
-            <span className="text-blue-500">Brilliant Minds</span> from Performing?
+            <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">Brilliant Minds</span> from Performing?
           </h2>
         </div>
 
@@ -79,55 +81,54 @@ function Friction() {
         </div>
 
         {/* MOBILE */}
-        <div className="md:hidden text-center">
+       <div className="md:hidden">
+  <Swiper
+    spaceBetween={20}
+    slidesPerView={1}
+    loop={true}
+    onSlideChange={(swiper) => setIndex(swiper.realIndex)}
+  >
+    {data.map((item, i) => (
+      <SwiperSlide key={i}>
+        
+        <div className="text-center">
           
           {/* IMAGE */}
           <img
-            src={data[index].img}
+            src={item.img}
             alt="brain"
-            className="w-[300px] mx-auto mb-6 transition-all duration-300"
+            className="w-[300px] mx-auto mb-6"
           />
 
           {/* CARD */}
-          <div className="bg-[#f5eee6] p-5 rounded-xl shadow text-left md:text-center">
+          <div className="bg-[#f5eee6] p-5 rounded-xl shadow text-left">
             <h3 className="font-semibold text-lg">
-              {data[index].title}
+              {item.title}
             </h3>
             <p className="text-sm text-gray-600 mt-2">
-              {data[index].desc}
+              {item.desc}
             </p>
           </div>
 
-          {/* DOTS */}
-          <div className="flex justify-center gap-2 mt-4">
-            {data.map((_, i) => (
-              <div
-                key={i}
-                onClick={() => setIndex(i)}
-                className={`w-2 h-2 rounded-full cursor-pointer transition ${
-                  i === index ? "bg-orange-500 scale-110" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* SWIPE */}
-          <div
-            className="mt-4"
-            onTouchStart={(e) => (window.startX = e.touches[0].clientX)}
-            onTouchEnd={(e) => {
-              const endX = e.changedTouches[0].clientX;
-
-              if (window.startX - endX > 50) {
-                setIndex((prev) => (prev + 1) % data.length);
-              } else if (endX - window.startX > 50) {
-                setIndex((prev) =>
-                  prev === 0 ? data.length - 1 : prev - 1
-                );
-              }
-            }}
-          />
         </div>
+
+      </SwiperSlide>
+    ))}
+  </Swiper>
+
+  {/* DOTS (sync with swiper) */}
+  <div className="flex justify-center gap-2 mt-4">
+    {data.map((_, i) => (
+      <div
+        key={i}
+        onClick={() => setIndex(i)}
+        className={`w-2 h-2 rounded-full transition ${
+          i === index ? "bg-orange-500 scale-110" : "bg-gray-300"
+        }`}
+      />
+    ))}
+  </div>
+</div>
 
         {/* CTA */}
         <div className="flex justify-center mt-10">
