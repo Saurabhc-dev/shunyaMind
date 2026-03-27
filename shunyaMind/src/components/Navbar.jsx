@@ -42,7 +42,7 @@ function Navbar() {
           ☰
         </div>
       </div>
-      {/* 🔥 FULL SCREEN MOBILE MENU */}
+      {/*  FULL SCREEN MOBILE MENU */}
       {open && (
         <div className="fixed top-0 left-0 w-full h-screen bg-white z-50 flex flex-col">
           {/* Top bar */}

@@ -49,7 +49,7 @@ function Marquee() {
         </p>
       </div>
 
-      {/* 🔥 ROW 1 (→ direction) */}
+      {/*  ROW 1 (→ direction) */}
       <div className="overflow-hidden group">
         <div className="hidden md:block absolute left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
         <div className="hidden md:block absolute right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10" />
@@ -61,7 +61,7 @@ function Marquee() {
         </div>
       </div>
 
-      {/* 🔥 ROW 2 (← direction) */}
+      {/*  ROW 2 (← direction) */}
       <div className="overflow-hidden mt-6 group">
         <div className="flex gap-6 animate-scroll-left pause">
           {row2.map((item, i) => (

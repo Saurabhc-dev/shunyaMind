@@ -4,6 +4,10 @@ import img2 from "../assets/system2.png";
 import img3 from "../assets/system3.png";
 import section4 from "../assets/section4.png"
 import section4Mobile from "../assets/section4mobile.png"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 
 const data = [
@@ -44,7 +48,7 @@ function System() {
           </p>
         </div>
 
-        {/* 🔥 DESKTOP */}
+        {/*  DESKTOP */}
         <div className="hidden md:grid grid-cols-2 gap-10 items-center">
           <div className="hidden md:block absolute left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
         <div className="hidden md:block absolute right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10" />
@@ -81,55 +85,42 @@ function System() {
           </div>
         </div>
 
-        {/* 🔥 MOBILE SLIDER */}
-        <div className="md:hidden text-center">
-          
-          {/* IMAGE */}
-          <img
-            src={data[active].img}
-            className="w-[250px] mx-auto mb-6"
-          />
+        {/*  MOBILE SLIDER */}
+      <div className="md:hidden text-center">
+  
+  <Swiper
+    modules={[Pagination]}
+    spaceBetween={20}
+    slidesPerView={1}
+    loop={true}
+    onSlideChange={(swiper) => setActive(swiper.realIndex)}
+    // pagination={{ clickable: true}}
+  >
+    {data.map((item, i) => (
+      <SwiperSlide key={i}>
+        
+        {/* IMAGE */}
+        <img
+          src={item.img}
+          className="w-[250px] mx-auto mb-6"
+        />
 
-          {/* TEXT */}
-          <div className="px-4">
-            <h3 className="font-semibold text-lg text-left">
-              {data[active].title}
-            </h3>
-            <p className="text-sm text-gray-600 mt-2 text-left">
-              {data[active].desc}
-            </p>
-          </div>
-
-          {/* DOTS */}
-          <div className="flex justify-center gap-2 mt-4">
-            {data.map((_, i) => (
-              <div
-                key={i}
-                onClick={() => setActive(i)}
-                className={`w-2 h-2 rounded-full ${
-                  i === active ? "bg-orange-500" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* SWIPE */}
-          <div
-            className="mt-4"
-            onTouchStart={(e) => (window.startX = e.touches[0].clientX)}
-            onTouchEnd={(e) => {
-              const endX = e.changedTouches[0].clientX;
-
-              if (window.startX - endX > 50) {
-                setActive((prev) => (prev + 1) % data.length);
-              } else if (endX - window.startX > 50) {
-                setActive((prev) =>
-                  prev === 0 ? data.length - 1 : prev - 1
-                );
-              }
-            }}
-          />
+        {/* TEXT */}
+        <div className="px-4">
+          <h3 className="font-semibold text-lg text-left">
+            {item.title}
+          </h3>
+          <p className="text-sm text-gray-600 mt-2 text-left">
+            {item.desc}
+          </p>
         </div>
+
+      </SwiperSlide>
+    ))}
+  </Swiper>
+
+ 
+</div>
       </div>
     </section>
  <section className="w-full">
