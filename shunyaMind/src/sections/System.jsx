@@ -1,7 +1,7 @@
 import { useState } from "react";
-import img1 from "../assets/system1.png";
-import img2 from "../assets/system2.png";
-import img3 from "../assets/system3.png";
+import img1 from "../assets/system1.webp";
+import img2 from "../assets/system2.webp";
+import img3 from "../assets/system3.webp";
 import section4 from "../assets/section4.webp";
 import section4Mobile from "../assets/section4mobile.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
