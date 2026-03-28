@@ -2,33 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/iconSunya.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" />
 
+    <link rel="icon" type="image/svg+xml" href="/iconSunya.svg" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preload Hero Image -->
     <link
       rel="preload"
       as="image"
-      href="/assets/hero-Bz1PTTPC.webp"
-      imagesrcset="/assets/hero-Bz1PTTPC.webp"
+      href="/assets/hero.webp"
       fetchpriority="high"
     />
+
+    <!-- SEO -->
+    <title>ShunyaMind | NEET & JEE Learning Platform</title>
+    <meta
+      name="description"
+      content="Cognition-first learning for NEET & JEE aspirants."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0b3c5d" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ShunyaMind" />
+    <meta property="og:description" content="Cognition-first learning for NEET & JEE aspirants." />
+    <meta property="og:image" content="/assets/hero-Bz1PTTPC.webp" />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <style>
       body {
         margin: 0;
         font-family: sans-serif;
       }
     </style>
-    <title>shunyamind</title>
-    <meta
-      name="description"
-      content="Cognition-first learning for NEET & JEE aspirants."
-    />
-
-    <meta name="robots" content="index, follow" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

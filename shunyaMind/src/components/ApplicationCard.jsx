@@ -7,7 +7,7 @@ function ApplicationCard({ item }) {
   {/* BG IMAGE */}
   <img
     src={hoverBg}
-    alt=""
+    alt="background"
     loading="lazy"
     width="400"
     height="300"
@@ -19,7 +19,7 @@ function ApplicationCard({ item }) {
     {/* ICON */}
     <img
       src={item.icon}
-      alt=""
+      alt="icon1"
       width="40"
       height="40"
       loading="lazy"
@@ -57,7 +57,7 @@ function ApplicationCard({ item }) {
     <button
       className={`mt-auto w-full py-2 rounded-md text-sm mt-5 ${
         item.primary
-          ? "bg-orange-500 text-white"
+          ? "bg-orange-600 text-white"
           : "border border-blue-400 text-blue-600"
       }`}
     >
