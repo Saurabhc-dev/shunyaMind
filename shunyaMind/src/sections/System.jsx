@@ -38,11 +38,11 @@ function System() {
           <div className="text-center mb-12">
             <h4 className="text-2xl md:text-4xl font-bold">
               How We Turn{" "}
-              <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-600 to-blue-500 bg-clip-text text-transparent">
                 Friction
               </span>{" "}
               into{" "}
-              <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-600 to-blue-500 bg-clip-text text-transparent">
                 Flow
               </span>
             </h4>
@@ -84,6 +84,7 @@ function System() {
                 width="500"
                 height="400"
                 className="w-[500px] h-auto"
+                alt="active"
               />
             </div>
           </div>
@@ -105,6 +106,7 @@ function System() {
         width="250"
         height="200"
         className="w-[250px] mx-auto mb-6"
+        alt="active2"
       />
 
       <div className="px-4">
@@ -124,6 +126,7 @@ function System() {
       <section className="w-full">
         <img
           src={section4Mobile}
+          alt="section4Mobile"
           loading="lazy"
           width="1200"
           height="600"

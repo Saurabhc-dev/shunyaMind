@@ -24,7 +24,7 @@ const prev = () => {
       <div className="max-w-6xl mx-auto px-6 mb-10">
         <h2 className="text-3xl font-bold">
           How the{" "}
-          <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-orange-600 to-blue-500 bg-clip-text text-transparent">
             System
           </span>{" "}
           is Applied
@@ -36,7 +36,7 @@ const prev = () => {
         {/* PREV */}
         <button
           onClick={prev}
-          className="w-12 h-12 bg-white shadow rounded-lg flex items-center justify-center hover:bg-orange-500 transition"
+          className="w-12 h-12 bg-white shadow rounded-lg flex items-center justify-center hover:bg-orange-600 transition"
         >
           <img
             src={rightArrow}
@@ -50,7 +50,7 @@ const prev = () => {
         {/* NEXT */}
         <button
           onClick={next}
-          className="w-12 h-12 bg-white shadow rounded-lg flex items-center justify-center hover:bg-orange-500 transition"
+          className="w-12 h-12 bg-white shadow rounded-lg flex items-center justify-center hover:bg-orange-600 transition"
         >
           <img
             src={leftArrow}

@@ -11,7 +11,7 @@ function Founder() {
       <div className="relative h-0 overflow-x-clip pointer-events-none">
         <img
           src={leftClip}
-          alt=""
+          alt="DesignLeft"
           className="hidden lg:block absolute -left-56 top-0 -translate-y-1/2"
         />
       </div>
@@ -21,7 +21,7 @@ function Founder() {
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           The{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 to-orange-600 bg-clip-text text-transparent">
             Thinking Behind
           </span>{" "}
           Shunya Mind
@@ -51,7 +51,7 @@ function Founder() {
                   FOUNDER
                 </div>
 
-                <img src={logo} className="w-10 h-10" />
+                <img src={logo} alt="componyLogo" className="w-10 h-10" />
               </div>
 
               {/* Name */}

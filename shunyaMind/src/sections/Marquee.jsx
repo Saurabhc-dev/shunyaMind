@@ -42,7 +42,7 @@ function Marquee() {
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold">
           Our <span className="text-blue-500">Proprietary</span>{" "}
-          <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">Cognitive</span> Systems
+          <span className="bg-gradient-to-r from-orange-600 to-blue-500 bg-clip-text text-transparent">Cognitive</span> Systems
         </h2>
         <p className="text-gray-600 mt-2">
           These systems form the backbone of cognition-first learning.

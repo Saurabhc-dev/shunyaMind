@@ -8,7 +8,7 @@ function Contact() {
         {/* Heading */}
         <div className="text-center mb-10  ">
           <h2 className="text-3xl font-bold">
-            Let's <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">Rebuild</span> How Students
+            Let's <span className="bg-gradient-to-r from-orange-600 to-blue-500 bg-clip-text text-transparent">Rebuild</span> How Students
             Learn
           </h2>
           <p className="text-gray-600 mt-2 ">

@@ -35,7 +35,7 @@ function Hero() {
 
           {/* Buttons */}
           <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-orange-500 text-white font-bold px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
+            <button className="bg-orange-700 text-white font-bold px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
               Take the Free Learning Friction Check
             </button>
             <button className="border border-blue-400 font-bold text-blue-600 z-10 px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">

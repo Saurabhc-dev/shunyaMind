@@ -18,12 +18,16 @@ export default function Home() {
       <Hero />
 
       <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
-        <Friction />
+      <main>
+
+         <Friction />
         <System />
         <Application />
         <Founder />
         <Marquee />
         <Contact />
+      </main>
+       
         <Footer />
       </Suspense>
     </>
