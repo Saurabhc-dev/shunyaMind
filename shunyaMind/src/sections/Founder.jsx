@@ -1,4 +1,4 @@
-import founderImg from "../assets/founder.png";
+import founderImg from "../assets/founder.webp";
 import logo from "../assets/logo_transparent.svg";
 import leftClip from "../assets/leftclip.png";
 import Tag from "../components/Tag";

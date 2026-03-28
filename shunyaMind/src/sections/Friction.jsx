@@ -1,8 +1,8 @@
 import { useState } from "react";
-import brain1 from "../assets/brain1.png";
-import brain2 from "../assets/brain2.png";
-import brain3 from "../assets/brain3.png";
-import brain4 from "../assets/brain4.png";
+import brain1 from "../assets/brain1.webp";
+import brain2 from "../assets/brain2.webp";
+import brain3 from "../assets/brain3.webp";
+import brain4 from "../assets/brain4.webp";
 import smImg1 from "../assets/smImg1.png"
 import Card from "../components/Card";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -87,6 +87,7 @@ function Friction() {
     slidesPerView={1}
     loop={true}
     onSlideChange={(swiper) => setIndex(swiper.realIndex)}
+  watchSlidesProgress={false}
   >
     {data.map((item, i) => (
       <SwiperSlide key={i}>

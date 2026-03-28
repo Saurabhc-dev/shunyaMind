@@ -1,26 +1,31 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../sections/Hero";
-import Friction from "../sections/Friction";
-import System from "../sections/System";
-import Contact from "../sections/Contact";
-import Footer from "../sections/Footer";
-import Application from "../sections/Application";
-import Marquee from "../sections/Marquee";
-import Founder from "../sections/Founder";
+
+//  Lazy loaded sections
+const Friction = lazy(() => import("../sections/Friction"));
+const System = lazy(() => import("../sections/System"));
+const Application = lazy(() => import("../sections/Application"));
+const Founder = lazy(() => import("../sections/Founder"));
+const Marquee = lazy(() => import("../sections/Marquee"));
+const Contact = lazy(() => import("../sections/Contact"));
+const Footer = lazy(() => import("../sections/Footer"));
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Friction />
-      <System />
-      <Application />
-      <Founder />
-      <Marquee />
-      <Contact />
-      <Footer />
+
+      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+        <Friction />
+        <System />
+        <Application />
+        <Founder />
+        <Marquee />
+        <Contact />
+        <Footer />
+      </Suspense>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import heroImg from "../assets/hero.png";
+import heroImg from "../assets/hero.webp";
 
 function Hero() {
   return (
@@ -6,14 +6,18 @@ function Hero() {
       <div className="md:hidden w-full">
         <img
           src={heroImg}
+          width="900"
+          height="600"
           alt="brain learning"
-          className="w-full object-cover"
+          className="w-full object-cover h-auto"
+          loading="eager"
+           fetchPriority="high"
         />
       </div>
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10">
         {/* LEFT CONTENT */}
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-left md:text-left text-4xl sm:text-5xl sm:text-base md:text-5xl font-bold leading-tight">
+          <h1 className="text-left md:text-left text-4xl sm:text-5xl md:text-5xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
               Cognition-First™
             </span>
@@ -24,20 +28,20 @@ function Hero() {
             </span>
           </h1>
 
-          <p className="mt-4 sm:mt-6 text-gray-600 text-left w-[350px] text-base sm:text-base">
+          <p className="mt-4 sm:mt-6 text-gray-600 text-left max-w-md w-full text-base sm:text-base">
             We don’t push harder, we remove friction. When friction drops,
             attention steadies, memory strengthens, and performance rises.
           </p>
 
           {/* Buttons */}
-         <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
-  <button className="bg-orange-500 text-white font-bold px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
-    Take the Free Learning Friction Check
-  </button>
-  <button className="border border-blue-400 font-bold text-blue-600 z-10 px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
-    Book a Discovery Call
-  </button>
-</div>
+          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="bg-orange-500 text-white font-bold px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
+              Take the Free Learning Friction Check
+            </button>
+            <button className="border border-blue-400 font-bold text-blue-600 z-10 px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
+              Book a Discovery Call
+            </button>
+          </div>
 
           <p className="mt-4 text-left text-xs sm:text-sm text-gray-500 max-w-md mx-auto md:mx-0">
             If you're a parent or student, this assessment helps you understand
@@ -64,21 +68,17 @@ function Hero() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="flex-1 w-full">
-          <img
-            src={heroImg}
-            alt="brain learning visual"
-            className="hidden md:block
-          absolute
-          -right-16
-          lg:-right-16
-          md:-right-36
-          top-1/2
-          -translate-y-1/2
-          w-[800px]
-          max-w-none
-          pointer-events-none"
-          />
+        <div className="flex-1 hidden md:flex justify-end ">
+          <div className="w-[600px] lg:w-[650px] h-[400px] lg:h-[400px] relative ">
+            <img
+              src={heroImg}
+              width="800"
+              height="500"
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-full h-auto"
+               fetchPriority="high"
+                loading="eager"
+            />
+          </div>
         </div>
       </div>
     </section>

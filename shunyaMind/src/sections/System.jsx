@@ -2,13 +2,12 @@ import { useState } from "react";
 import img1 from "../assets/system1.png";
 import img2 from "../assets/system2.png";
 import img3 from "../assets/system3.png";
-import section4 from "../assets/section4.png"
-import section4Mobile from "../assets/section4mobile.png"
+import section4 from "../assets/section4.png";
+import section4Mobile from "../assets/section4mobile.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
 
 const data = [
   {
@@ -33,111 +32,102 @@ function System() {
 
   return (
     <>
-    <section className="py-20 bg-[#f7fbff]">
-      <div className="max-w-6xl mx-auto px-6">
-        
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h4 className="text-2xl md:text-4xl font-bold">
-            How We Turn{" "}
-            <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">Friction</span> into{" "}
-            <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">Flow</span>
-          </h4>
-          <p className="text-gray-600 mt-2 text-xs md:text-lg">
-            We reduce learning friction and create conditions where students naturally enter a state of clarity, stability, and optimal learning
-          </p>
-        </div>
+      <section className="py-20 bg-[#f7fbff]">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h4 className="text-2xl md:text-4xl font-bold">
+              How We Turn{" "}
+              <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                Friction
+              </span>{" "}
+              into{" "}
+              <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                Flow
+              </span>
+            </h4>
+            <p className="text-gray-600 mt-2 text-xs md:text-lg">
+              We reduce learning friction and create conditions where students
+              naturally enter a state of clarity, stability, and optimal
+              learning
+            </p>
+          </div>
 
-        {/*  DESKTOP */}
-        <div className="hidden md:grid grid-cols-2 gap-10 items-center">
-          <div className="hidden md:block absolute left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="hidden md:block absolute right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10" />
-          
-          {/* LEFT ACCORDION */}
-          <div className="space-y-4">
-            
+          {/*  DESKTOP */}
+          <div className="hidden md:grid grid-cols-2 gap-10 items-center">
+            <div className="hidden md:block absolute left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="hidden md:block absolute right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10" />
 
-            {data.map((item, i) => (
-              <div
-                key={i}
-                onClick={() => setActive(i)}
-                className="border-b pb-4 cursor-pointer"
-              >
-                <div className="flex justify-between items-center">
-                  <h5 className="font-semibold text-xl">
-                    {item.title}
-                  </h5>
-                  <span>{active === i ? "−" : "+"}</span>
+            {/* LEFT ACCORDION */}
+            <div className="space-y-4">
+              {data.map((item, i) => (
+                <div
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className="border-b pb-4 cursor-pointer"
+                >
+                  <div className="flex justify-between items-center">
+                    <h5 className="font-semibold text-xl">{item.title}</h5>
+                    <span>{active === i ? "−" : "+"}</span>
+                  </div>
+
+                  {active === i && (
+                    <p className="text-sm text-gray-600 mt-2 ">{item.desc}</p>
+                  )}
                 </div>
+              ))}
+            </div>
 
-                {active === i && (
-                  <p className="text-sm text-gray-600 mt-2 ">
-                    {item.desc}
-                  </p>
-                )}
-              </div>
-            ))}
+            {/* RIGHT IMAGE */}
+            <div className="flex justify-center">
+              <img src={data[active].img} className="w-[500px]" />
+            </div>
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="flex justify-center">
-            <img src={data[active].img} className="w-[500px]" />
+          {/*  MOBILE SLIDER */}
+          <div className="md:hidden text-center">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={20}
+              slidesPerView={1}
+              loop={true}
+              onSlideChange={(swiper) => setActive(swiper.realIndex)}
+              watchSlidesProgress={false}
+              // pagination={{ clickable: true}}
+            >
+              {data.map((item, i) => (
+                <SwiperSlide key={i}>
+                  {/* IMAGE */}
+                  <img src={item.img} className="w-[250px] mx-auto mb-6" />
+
+                  {/* TEXT */}
+                  <div className="px-4">
+                    <h3 className="font-semibold text-lg text-left">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-2 text-left">
+                      {item.desc}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
-
-        {/*  MOBILE SLIDER */}
-      <div className="md:hidden text-center">
-  
-  <Swiper
-    modules={[Pagination]}
-    spaceBetween={20}
-    slidesPerView={1}
-    loop={true}
-    onSlideChange={(swiper) => setActive(swiper.realIndex)}
-    // pagination={{ clickable: true}}
-  >
-    {data.map((item, i) => (
-      <SwiperSlide key={i}>
-        
-        {/* IMAGE */}
+      </section>
+      <section className="w-full">
         <img
-          src={item.img}
-          className="w-[250px] mx-auto mb-6"
+          src={section4Mobile}
+          alt="Description"
+          className="block md:hidden w-full h-auto"
         />
-
-        {/* TEXT */}
-        <div className="px-4">
-          <h3 className="font-semibold text-lg text-left">
-            {item.title}
-          </h3>
-          <p className="text-sm text-gray-600 mt-2 text-left">
-            {item.desc}
-          </p>
-        </div>
-
-      </SwiperSlide>
-    ))}
-  </Swiper>
-
- 
-</div>
-      </div>
-    </section>
- <section className="w-full">
-      <img
-    src={section4Mobile}
-    alt="Description"
-    className="block md:hidden w-full h-auto"
-  />
-  <img
-    src={section4}
-    alt="Description"
-    className="hidden md:block w-full h-auto"
-  />
-</section>
-
+        <img
+          src={section4}
+          alt="Description"
+          className="hidden md:block w-full h-auto"
+        />
+      </section>
     </>
-    
   );
 }
 

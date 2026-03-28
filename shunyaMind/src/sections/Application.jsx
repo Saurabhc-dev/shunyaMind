@@ -3,6 +3,8 @@ import applicationData from "../data/applicationData";
 import ApplicationCard from "../components/ApplicationCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import leftArrow from "../assets/arrow_left.svg";
+import rightArrow from "../assets/arrowright.svg";
 
 function Application() {
   const [cards, setCards] = useState(applicationData);
@@ -20,7 +22,6 @@ function Application() {
 
   return (
     <section className="py-20 bg-[#f7fbff] relative overflow-hidden">
-      
       {/* Heading */}
       <div className="max-w-6xl mx-auto px-6 mb-10">
         <h2 className="text-3xl font-bold">
@@ -34,11 +35,20 @@ function Application() {
 
       {/* Arrows */}
       <div className="hidden lg:flex absolute right-20 top-20 gap-2">
-        <button onClick={prev} className="w-12 h-12 bg-white shadow rounded-lg">
-          ←
+        {/* PREV */}
+        <button
+          onClick={prev}
+          className="w-12 h-12 bg-white shadow rounded-lg flex items-center justify-center hover:bg-orange-500 transition"
+        >
+          <img src={rightArrow} alt="prev" className="w-5 h-5" />
         </button>
-        <button onClick={next} className="w-12 h-12 bg-white shadow rounded-lg">
-          →
+
+        {/* NEXT */}
+        <button
+          onClick={next}
+          className="w-12 h-12 bg-white shadow rounded-lg flex items-center justify-center hover:bg-orange-500 transition"
+        >
+          <img src={leftArrow} alt="next" className="w-5 h-5" />
         </button>
       </div>
 
@@ -51,7 +61,12 @@ function Application() {
 
       {/* MOBILE */}
       <div className="lg:hidden px-4">
-        <Swiper spaceBetween={20} slidesPerView={1} loop={true}>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          loop={true}
+          watchSlidesProgress={false}
+        >
           {cards.map((item, i) => (
             <SwiperSlide key={i}>
               <ApplicationCard item={item} />
