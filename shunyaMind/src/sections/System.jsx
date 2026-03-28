@@ -54,9 +54,8 @@ function System() {
           </div>
 
           {/*  DESKTOP */}
-          <div className="hidden md:grid grid-cols-2 gap-10 items-center">
-            <div className="hidden md:block absolute left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
-            <div className="hidden md:block absolute right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="hidden md:grid grid-cols-2 gap-10 items-center ">
+            
 
             {/* LEFT ACCORDION */}
             <div className="space-y-4">
@@ -64,7 +63,7 @@ function System() {
                 <div
                   key={i}
                   onClick={() => setActive(i)}
-                  className="border-b pb-4 cursor-pointer"
+                  className="border-b pb-4 cursor-pointer min-h-[60px]"
                 >
                   <div className="flex justify-between items-center">
                     <h5 className="font-semibold text-xl">{item.title}</h5>
@@ -80,45 +79,54 @@ function System() {
 
             {/* RIGHT IMAGE */}
             <div className="flex justify-center">
-              <img src={data[active].img} className="w-[500px]" />
+              <img
+                src={data[active].img}
+                width="500"
+                height="400"
+                className="w-[500px] h-auto"
+              />
             </div>
           </div>
 
           {/*  MOBILE SLIDER */}
           <div className="md:hidden text-center">
-            <Swiper
-              modules={[Pagination]}
-              spaceBetween={20}
-              slidesPerView={1}
-              loop={true}
-              onSlideChange={(swiper) => setActive(swiper.realIndex)}
-              watchSlidesProgress={false}
-              // pagination={{ clickable: true}}
-            >
-              {data.map((item, i) => (
-                <SwiperSlide key={i}>
-                  {/* IMAGE */}
-                  <img src={item.img} className="w-[250px] mx-auto mb-6" />
+           <Swiper
+  modules={[Pagination]}
+  spaceBetween={20}
+  slidesPerView={1}
+  loop={true}
+  watchSlidesProgress={false}
+>
+  {data.map((item, i) => (
+    <SwiperSlide key={i} className="will-change-transform">
+      <img
+        src={item.img}
+        loading="lazy"
+        width="250"
+        height="200"
+        className="w-[250px] mx-auto mb-6"
+      />
 
-                  {/* TEXT */}
-                  <div className="px-4">
-                    <h3 className="font-semibold text-lg text-left">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-2 text-left">
-                      {item.desc}
-                    </p>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+      <div className="px-4">
+        <h3 className="font-semibold text-lg text-left">
+          {item.title}
+        </h3>
+        <p className="text-sm text-gray-600 mt-2 text-left">
+          {item.desc}
+        </p>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
           </div>
         </div>
       </section>
       <section className="w-full">
         <img
           src={section4Mobile}
-          alt="Description"
+          loading="lazy"
+          width="1200"
+          height="600"
           className="block md:hidden w-full h-auto"
         />
         <img
