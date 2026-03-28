@@ -3,7 +3,7 @@ import heroImg from "../assets/hero.webp";
 function Hero() {
   return (
     <section className="relative bg-[#eaf2f7] pt-20 overflow-hidden hero-gradient">
-      <div className="md:hidden w-full">
+      <div className="lg:hidden w-full">
         <img
           src={heroImg}
           width="900"
@@ -34,11 +34,11 @@ function Hero() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-start md:justify-start items-start md:items-center">
             <button className="bg-orange-600 text-white font-bold px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
               Take the Free Learning Friction Check
             </button>
-            <button className="border border-blue-400 font-bold text-blue-600 z-10 px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
+            <button className="border border-blue-400 font-bold text-blue-600 px-6 py-2 rounded-md w-full sm:w-auto whitespace-nowrap">
               Book a Discovery Call
             </button>
           </div>
@@ -68,8 +68,8 @@ function Hero() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="flex-1 hidden md:flex justify-end ">
-          <div className="w-[600px] lg:w-[650px] h-[400px] lg:h-[400px] relative ">
+        <div className="flex-1 hidden lg:flex justify-end ">
+          <div className="w-[600px] lg:w-[650px]  h-[400px] lg:h-[400px] relative ">
             <img
               src={heroImg}
               width="800"

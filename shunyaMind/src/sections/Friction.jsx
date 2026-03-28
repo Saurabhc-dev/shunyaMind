@@ -44,7 +44,7 @@ function Friction() {
   const [index, setIndex] = useState(0);
 
   return (
-    <section className="py-10 md:py-32 bg-white">
+    <section className="py-10  lg:py-30 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-10 md:mb-12">
