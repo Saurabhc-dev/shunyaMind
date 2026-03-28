@@ -18,7 +18,7 @@ function Hero() {
         {/* LEFT CONTENT */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-left md:text-left text-4xl sm:text-5xl md:text-5xl font-bold leading-tight">
-            <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-600 to-blue-500 bg-clip-text text-transparent">
               Cognition-First™
             </span>
             <br />
@@ -77,6 +77,7 @@ function Hero() {
               className="absolute right-0 top-1/2 -translate-y-1/2 w-full h-auto"
                fetchPriority="high"
                 loading="eager"
+                alt="rain_learning"
             />
           </div>
         </div>
