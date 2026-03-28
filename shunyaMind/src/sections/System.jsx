@@ -55,8 +55,6 @@ function System() {
 
           {/*  DESKTOP */}
           <div className="hidden md:grid grid-cols-2 gap-10 items-center ">
-            
-
             {/* LEFT ACCORDION */}
             <div className="space-y-4">
               {data.map((item, i) => (
@@ -83,7 +81,7 @@ function System() {
                 src={data[active].img}
                 width="500"
                 height="400"
-                className="w-[500px] h-auto"
+                className="w-[500px] aspect-square object-cover"
                 alt="active"
               />
             </div>
@@ -91,35 +89,35 @@ function System() {
 
           {/*  MOBILE SLIDER */}
           <div className="md:hidden text-center">
-           <Swiper
-  modules={[Pagination]}
-  spaceBetween={20}
-  slidesPerView={1}
-  loop={true}
-  watchSlidesProgress={false}
->
-  {data.map((item, i) => (
-    <SwiperSlide key={i} className="will-change-transform">
-      <img
-        src={item.img}
-        loading="lazy"
-        width="250"
-        height="200"
-        className="w-[250px] mx-auto mb-6"
-        alt="active2"
-      />
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={20}
+              slidesPerView={1}
+              loop={true}
+              watchSlidesProgress={false}
+            >
+              {data.map((item, i) => (
+                <SwiperSlide key={i} className="will-change-transform">
+                  <img
+                    src={item.img}
+                    loading="lazy"
+                    width="250"
+                    height="200"
+                    className="w-[250px] mx-auto mb-6"
+                    alt="active2"
+                  />
 
-      <div className="px-4">
-        <h3 className="font-semibold text-lg text-left">
-          {item.title}
-        </h3>
-        <p className="text-sm text-gray-600 mt-2 text-left">
-          {item.desc}
-        </p>
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
+                  <div className="px-4">
+                    <h3 className="font-semibold text-lg text-left">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-2 text-left">
+                      {item.desc}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>

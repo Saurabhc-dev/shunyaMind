@@ -11,7 +11,7 @@ function Hero() {
           alt="brain learning"
           className="w-full object-cover h-auto"
           loading="eager"
-           fetchPriority="high"
+          fetchPriority="high"
         />
       </div>
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10">
@@ -74,10 +74,10 @@ function Hero() {
               src={heroImg}
               width="800"
               height="500"
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-full h-auto"
-               fetchPriority="high"
-                loading="eager"
-                alt="rain_learning"
+              className="absolute max-w-[800px] object-cover right-0 top-1/2 -translate-y-1/2 w-full h-auto"
+              fetchPriority="high"
+              loading="eager"
+              alt="brain_learning"
             />
           </div>
         </div>

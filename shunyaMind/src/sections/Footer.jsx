@@ -1,10 +1,12 @@
 import logo from "../assets/logo.svg";
+import facebook from "../assets/facebook.svg";
+import insta from "../assets/insta.svg";
+import linkin from "../assets/linkin.svg";
 
 function Footer() {
   return (
     <footer className="bg-[#E5F4FF] py-14">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-10">
-        
         {/* LEFT SECTION */}
         <div>
           <img src={logo} alt="logo" className="h-10 mb-4" />
@@ -14,13 +16,26 @@ function Footer() {
           {/* Social Icons */}
           <div className="flex gap-3 mb-4">
             <div className="bg-blue-200 p-2 rounded">
-              <i className="fab fa-facebook-f text-blue-600"></i>
+             
+              <img
+                src={facebook}
+                alt="facebook"
+                className="w-5 h-5 object-contain"
+              />
             </div>
             <div className="bg-blue-200 p-2 rounded">
-              <i className="fab fa-linkedin-in text-blue-600"></i>
+              <img
+                src={insta}
+                alt="facebook"
+                className="w-5 h-5 object-contain"
+              />
             </div>
             <div className="bg-blue-200 p-2 rounded">
-              <i className="fab fa-instagram text-blue-600"></i>
+              <img
+                src={linkin}
+                alt="facebook"
+                className="w-5 h-5 object-contain"
+              />
             </div>
           </div>
 
@@ -58,12 +73,10 @@ function Footer() {
             <li>Privacy Policy</li>
             <li>Terms of Use</li>
           </ul>
-
-          
         </div>
 
         <div>
-           <h3 className="font-semibold mb-2">Talk to an Expert</h3>
+          <h3 className="font-semibold mb-2">Talk to an Expert</h3>
           <p className="text-sm text-gray-600">
             Get clarity, insights, and a clear action plan.
           </p>
